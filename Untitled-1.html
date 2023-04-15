@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<style>
+		body {
+			font-family: 'Times New Roman', Times, serif, fantasy;
+			margin: 0;
+			padding: 0;
+		}
+		h1 {
+			text-align: center;
+		}
+		input[type="text"] {
+			width: 100%;
+			padding: 10px;
+			margin: 30px 0;
+			font-size: 1.5rem;
+			border-radius: 5px;
+			border: 1px solid #270a0a;
+		}
+		input[type="button"] {
+			width: 25%;
+			padding: 10px;
+			margin: 5px;
+			font-size: 1.5rem;
+			border-radius: 5px;
+			background-color: #2bd5aa;
+			color: #0c0505;
+			border: none;
+			cursor: pointer;
+		}
+		input[type="button"]:hover {
+			background-color: #1caebe;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Calculator</h1>
+
+	<form>
+		<input type="text" id="expression" placeholder="Enter an expression to evaluate">
+		<input type="button" value="Calculate" onclick="calculate()">
+	</form>
+
+	<p id="result"></p>
+
+	<script>
+		function calculate() {
+			const expression = document.getElementById('expression').value;
+			const result = eval(expression);
+			document.getElementById('result').innerHTML = `Result: ${result}`;
+		}
+	</script>
+
+</body>
+</html>
